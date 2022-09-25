@@ -1,18 +1,21 @@
 package com.example.transactionaldemo.payload;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 public class UserPayload {
 
     private Long companyId;
-    private String email;
+    private String username;
     private String firstName;
     private String lastName;
 
     public Long getCompanyId() {
         return companyId;
     }
-    
-    public String getEmail() {
-        return email;
+
+    public String getUsername() {
+        return username;
     }
 
     public String getFirstName() {
@@ -21,5 +24,15 @@ public class UserPayload {
 
     public String getLastName() {
         return lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "UserPayload{" +
+            "companyId=" + companyId +
+            ", username='" + username + '\'' +
+            ", firstName='" + firstName + '\'' +
+            ", lastName='" + lastName + '\'' +
+            '}';
     }
 }

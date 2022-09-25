@@ -4,6 +4,7 @@ server:
 spring:
   jpa:
     open-in-view: false
+
     hibernate:
       ddl-auto: update
       naming:
@@ -24,6 +25,6 @@ logging:
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql.BasicBinder: DEBUG
 
-    org.springframework.orm.jpa: TRACE
-    org.springframework.transaction: TRACE
-    org.hibernate.engine.transaction.internal.TransactionImpl: TRACE
+    org.springframework.orm.jpa: DEBUG
+    org.springframework.transaction: DEBUG
+    org.hibernate.engine.transaction.internal.TransactionImpl: DEBUG

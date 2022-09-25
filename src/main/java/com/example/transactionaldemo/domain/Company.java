@@ -38,8 +38,8 @@ public class Company {
         return id;
     }
 
-    public Country getCountry() {
-        return country;
+    public String getCountryName() {
+        return country.getName();
     }
 
     public String getName() {

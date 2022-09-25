@@ -2,6 +2,7 @@ package com.example.transactionaldemo.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,7 +18,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "company")
     private Company company;
 
@@ -44,8 +45,12 @@ public class User {
         return id;
     }
 
-    public Company getCompany() {
-        return company;
+    public Long getCompanyId() {
+        return company.getId();
+    }
+
+    public String getCompanyName() {
+        return company.getName();
     }
 
     public String getUsername() {
